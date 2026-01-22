@@ -25,6 +25,12 @@ public class Program {
 		System.out.println("==== TEST 4: insert seller ====");
 		Seller sel = new Seller(null,"Greg","greg@gmail.com", new Date(),4000.0, dep);
 		sellerDao.insert(sel);
+		
+		System.out.println("==== TEST 5: update seller ====");
+		seller = sellerDao.findById(1);
+		seller.setName("Marta");
+		sellerDao.update(seller);
+		System.out.println("Update completed");
 	}
 
 }
